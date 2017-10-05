@@ -1,0 +1,10 @@
+version: '2'
+services:
+  web:
+    build: ./web
+    ports:
+      - "80:80"
+    volumes:
+      - ./var/public_html:/var/www/public_html
+      - ./var/logs:/var/log/httpd
+      - ./files/apache_conf/0_virtualhost.conf:/etc/httpd/conf.d/0_virtualhost.conf
